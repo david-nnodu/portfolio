@@ -72,6 +72,35 @@
 }
 
 
+/* ---------- 2. Night theme (NEPA off) ---------- */
+[data-theme="night"] {
+  --yellow: #E0A100;
+  --owa: #E5484D;
+
+  --bg: #12110E;
+  --text: #F5F0E1;
+  --muted: #A8A190;
+  --card: #1D1B16;
+  --line: #E9E2CF;
+  --shadow: #C98A00;
+  --hero-bg: #1A160B;
+  --hero-text: #F5F0E1;
+  --road: #0A0A08;
+  --road-text: #F5F0E1;
+  --road-muted: #A8A190;
+  --btn-bg: #E0A100;
+  --btn-text: #12110E;
+  --stripe-a: #050504;
+  --stripe-b: #C98A00;
+  --focus: #E0A100;
+
+  --bus-body: #C98A00;
+  --bus-light: #FFE38A;
+
+  color-scheme: dark;
+}
+
+
 /* ---------- 3. Reset and base ---------- */
 *,
 *::before,

@@ -42,6 +42,60 @@
   }
 
 
+  /* ---------- 1. NEPA toggle (dark mode) ---------- */
+
+  function isLightOff() {
+    return root.getAttribute('data-theme') === 'night';
+  }
+
+  function updateNepaButtons() {
+    var off = isLightOff();
+    document.querySelectorAll('.nepa-toggle').forEach(function (button) {
+      button.setAttribute('aria-pressed', off ? 'true' : 'false');
+      button.querySelector('.nepa-label').textContent = off ? 'No light' : 'NEPA';
+      button.title = off
+        ? 'Light is off (dark mode). Click to bring NEPA back.'
+        : 'NEPA: what Nigerians still call the power company. Click to turn the light off (dark mode).';
+    });
+  }
+
+  function setLightOff(off) {
+    if (off) {
+      root.setAttribute('data-theme', 'night');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    saveSetting('nepa', off ? 'off' : 'on');
+    updateNepaButtons();
+  }
+
+  function initNepa() {
+    updateNepaButtons();
+
+    document.querySelectorAll('.nepa-toggle').forEach(function (button) {
+      button.addEventListener('click', function () {
+        // Light is off: bring it back and celebrate
+        if (isLightOff()) {
+          setLightOff(false);
+          showToast('Up NEPA!');
+          return;
+        }
+
+        // Light is on: flicker, then off
+        if (reduceMotion.matches) {
+          setLightOff(true);
+          return;
+        }
+        root.classList.add('flicker');
+        setTimeout(function () {
+          root.classList.remove('flicker');
+          setLightOff(true);
+        }, 400);
+      });
+    });
+  }
+
+
   /* ---------- 4. Mobile menu ---------- */
 
   function initMenu() {
@@ -83,6 +137,7 @@
   /* ---------- Start ---------- */
 
   function init() {
+    initNepa();
     initMenu();
     initYear();
   }
