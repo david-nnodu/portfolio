@@ -804,6 +804,55 @@ body::before {
 }
 
 
+/* ---------- 10. Contact ---------- */
+.contact {
+  background: var(--hero-bg);
+  color: var(--hero-text);
+}
+
+.contact .kicker {
+  color: var(--hero-text);
+}
+
+.contact-inner {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.contact-inner .section-head {
+  margin-bottom: 0;
+}
+
+.contact-actions {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact-direct strong {
+  user-select: all;
+  overflow-wrap: anywhere;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-weight: 700;
+}
+
+.contact-links a {
+  display: inline-block;
+  padding-block: 0.4rem;
+}
+
+.sticker-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+
 /* ---------- 11. Footer and toast ---------- */
 .site-footer {
   --focus: var(--yellow);
