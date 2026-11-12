@@ -147,6 +147,87 @@
       </div>
     </section>
 
+    <!-- ===== Projects: today's route ===== -->
+    <section class="section section--road projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Today's route</p>
+          <h2 class="section-title" id="projects-title">Projects</h2>
+          <p class="section-intro">Three stops on the route so far. Hover or scroll through them and the bus follows.</p>
+        </div>
+
+        <div class="route-wrap">
+          <ol class="route-bar" aria-label="Route stops">
+            <li class="stop"><a href="#about"><span class="stop-dot"></span><span class="stop-name">Driver</span><span class="stop-note">about</span></a></li>
+            <li class="stop is-current"><a href="#project-1"><span class="stop-dot"></span><span class="stop-name">Stop 01</span><span class="stop-note">project</span></a></li>
+            <li class="stop"><a href="#project-2"><span class="stop-dot"></span><span class="stop-name">Stop 02</span><span class="stop-note">project</span></a></li>
+            <li class="stop"><a href="#project-3"><span class="stop-dot"></span><span class="stop-name">Stop 03</span><span class="stop-note">project</span></a></li>
+            <li class="stop stop--owa"><a href="#contact"><span class="stop-dot"></span><span class="stop-name">Owa!</span><span class="stop-note">contact</span></a></li>
+          </ol>
+
+          <div class="project-list">
+            <!-- PLACEHOLDER: Project 1 (this one has the details page) -->
+            <article class="ticket is-current" id="project-1" aria-labelledby="p1-title">
+              <span class="card-stop stop-dot" aria-hidden="true"></span>
+              <img class="ticket-img" src="assets/img/placeholder.svg" alt="Screenshot of Project One" width="1600" height="1000" loading="lazy">
+              <div class="ticket-body">
+                <p class="ticket-meta">Stop 01 · 2026</p>
+                <h3 class="ticket-title" id="p1-title">[Project One]</h3>
+                <p>[One sentence on what this project does and who it's for.]</p>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">[HTML]</li><li class="tag">[CSS]</li><li class="tag">[JavaScript]</li>
+                </ul>
+                <div class="ticket-actions">
+                  <a class="btn btn--small" href="project.html">Full journey</a>
+                  <!-- PLACEHOLDER: live link -->
+                  <a class="btn btn--small btn--plain" href="#" target="_blank" rel="noopener">Enter this bus ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PLACEHOLDER: Project 2 -->
+            <article class="ticket" id="project-2" aria-labelledby="p2-title">
+              <span class="card-stop stop-dot" aria-hidden="true"></span>
+              <img class="ticket-img" src="assets/img/placeholder.svg" alt="Screenshot of Project Two" width="1600" height="1000" loading="lazy">
+              <div class="ticket-body">
+                <p class="ticket-meta">Stop 02 · 2026</p>
+                <h3 class="ticket-title" id="p2-title">[Project Two]</h3>
+                <p>[One sentence on what this project does and who it's for.]</p>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">[Tech]</li><li class="tag">[Tech]</li>
+                </ul>
+                <div class="ticket-actions">
+                  <!-- PLACEHOLDER: live link -->
+                  <a class="btn btn--small btn--plain" href="#" target="_blank" rel="noopener">Enter this bus ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PLACEHOLDER: Project 3 (no live link yet, so it shows "Still in the garage") -->
+            <article class="ticket" id="project-3" aria-labelledby="p3-title">
+              <span class="card-stop stop-dot" aria-hidden="true"></span>
+              <img class="ticket-img" src="assets/img/placeholder.svg" alt="Screenshot of Project Three" width="1600" height="1000" loading="lazy">
+              <div class="ticket-body">
+                <p class="ticket-meta">Stop 03 · 2026</p>
+                <h3 class="ticket-title" id="p3-title">[Project Three]</h3>
+                <p>[One sentence on what this project does and who it's for.]</p>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">[Tech]</li><li class="tag">[Tech]</li>
+                </ul>
+                <div class="ticket-actions">
+                  <span class="garage">Still in the garage</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="route-bus" aria-hidden="true" hidden>
+            <svg class="danfo" viewBox="0 0 220 112"><use href="#danfo"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">

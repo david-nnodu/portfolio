@@ -672,6 +672,138 @@ body::before {
 }
 
 
+/* ---------- 9. Projects route ---------- */
+.section--road {
+  --focus: var(--yellow);
+  background: var(--road);
+  color: var(--road-text);
+}
+
+.section--road .kicker {
+  color: var(--yellow);
+}
+
+.route-wrap {
+  position: relative;
+}
+
+/* The horizontal route bar only shows on desktop */
+.route-bar {
+  display: none;
+}
+
+/* Mobile and tablet: a vertical dashed route down the left edge */
+.project-list {
+  position: relative;
+  display: grid;
+  gap: var(--space-5);
+  padding-left: 2.75rem;
+}
+
+.project-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.9rem;
+  border-left: 3px dashed var(--yellow);
+}
+
+.ticket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: var(--text);
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 6px 6px 0 var(--yellow);
+  transition: transform 0.2s ease;
+}
+
+.card-stop {
+  position: absolute;
+  top: 1.5rem;
+  left: calc(-1.85rem - 7.5px);
+}
+
+.ticket.is-current .card-stop {
+  background: var(--yellow);
+}
+
+.ticket-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 2px dashed var(--line);
+}
+
+.ticket-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: var(--space-3);
+  min-width: 0;
+}
+
+.ticket-meta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ticket-title {
+  font-size: 1.4rem;
+}
+
+.ticket-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.garage {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border: 1.5px dashed var(--muted);
+}
+
+/* The little bus that drives along the route (positioned by main.js) */
+.route-bus {
+  --bus-w: 52px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: var(--bus-w);
+  pointer-events: none;
+  transform: translate(calc(var(--bus-x, 0px) - 50%), calc(var(--bus-y, 0px) - 50% - 30px)) rotate(90deg);
+  transition: transform 0.6s cubic-bezier(0.5, 0, 0.2, 1);
+}
+
+.route-bus.no-anim {
+  transition: none;
+}
+
+.route-bus .danfo {
+  width: 100%;
+  height: auto;
+}
+
+
 /* ---------- 11. Footer and toast ---------- */
 .site-footer {
   --focus: var(--yellow);

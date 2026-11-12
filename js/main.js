@@ -120,6 +120,90 @@
   }
 
 
+  /* ---------- 3. Bus moving along the projects route ---------- */
+  // Desktop: the bus moves along the horizontal bar when you hover or focus a project.
+  // Tablet and mobile: the route is vertical and the bus follows you as you scroll.
+
+  function initRoute() {
+    var wrap = document.querySelector('.route-wrap');
+    if (!wrap) return;
+
+    var bus = wrap.querySelector('.route-bus');
+    var cards = Array.prototype.slice.call(wrap.querySelectorAll('.ticket'));
+    var barStops = Array.prototype.slice.call(wrap.querySelectorAll('.route-bar .stop'));
+    var desktop = window.matchMedia('(min-width: 1024px)');
+    var current = 0;
+
+    // The dot the bus should sit on for project number `index`
+    function dotFor(index) {
+      if (desktop.matches) {
+        var stop = barStops[index + 1]; // stop 0 on the bar is "Driver"
+        return stop && stop.querySelector('.stop-dot');
+      }
+      return cards[index] && cards[index].querySelector('.card-stop');
+    }
+
+    function moveBus() {
+      var dot = dotFor(current);
+      if (!dot) return;
+      var wrapBox = wrap.getBoundingClientRect();
+      var dotBox = dot.getBoundingClientRect();
+      bus.style.setProperty('--bus-x', (dotBox.left - wrapBox.left + dotBox.width / 2) + 'px');
+      bus.style.setProperty('--bus-y', (dotBox.top - wrapBox.top + dotBox.height / 2) + 'px');
+    }
+
+    function setCurrent(index) {
+      current = index;
+      barStops.forEach(function (stop, i) {
+        stop.classList.toggle('is-current', i === index + 1);
+      });
+      cards.forEach(function (card, i) {
+        card.classList.toggle('is-current', i === index);
+      });
+      moveBus();
+    }
+
+    // Place the bus without animating the first time
+    bus.hidden = false;
+    bus.classList.add('no-anim');
+    setCurrent(0);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { bus.classList.remove('no-anim'); });
+    });
+
+    // Desktop: hover or keyboard focus picks the stop
+    cards.forEach(function (card, i) {
+      card.addEventListener('mouseenter', function () { if (desktop.matches) setCurrent(i); });
+      card.addEventListener('focusin', function () { setCurrent(i); });
+    });
+
+    // Mobile and tablet: whichever card crosses the middle of the screen
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        if (desktop.matches) return;
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setCurrent(cards.indexOf(entry.target));
+        });
+      }, { rootMargin: '-45% 0px -45% 0px' });
+      cards.forEach(function (card) { observer.observe(card); });
+    }
+
+    // Layout changes (resize, fonts loading, images loading) move the dots
+    var frame;
+    function remeasure() {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(function () {
+        bus.classList.add('no-anim');
+        moveBus();
+        requestAnimationFrame(function () { bus.classList.remove('no-anim'); });
+      });
+    }
+    window.addEventListener('resize', remeasure);
+    window.addEventListener('load', remeasure);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
+  }
+
+
   /* ---------- 4. Mobile menu ---------- */
 
   function initMenu() {
@@ -163,6 +247,7 @@
   function init() {
     initNepa();
     initCallouts();
+    initRoute();
     initMenu();
     initYear();
   }

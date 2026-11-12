@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <pattern id="hatch" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="40" height="40" fill="#EDE5CF"/>
+      <rect width="14" height="40" fill="#E3D8B9"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#hatch)"/>
+  <rect x="0" y="940" width="1600" height="60" fill="#141414"/>
+  <g fill="#F2B705">
+    <rect x="60" y="940" width="60" height="60"/><rect x="180" y="940" width="60" height="60"/><rect x="300" y="940" width="60" height="60"/>
+    <rect x="420" y="940" width="60" height="60"/><rect x="540" y="940" width="60" height="60"/><rect x="660" y="940" width="60" height="60"/>
+    <rect x="780" y="940" width="60" height="60"/><rect x="900" y="940" width="60" height="60"/><rect x="1020" y="940" width="60" height="60"/>
+    <rect x="1140" y="940" width="60" height="60"/><rect x="1260" y="940" width="60" height="60"/><rect x="1380" y="940" width="60" height="60"/>
+    <rect x="1500" y="940" width="60" height="60"/>
+  </g>
+  <rect x="520" y="410" width="560" height="120" fill="#141414"/>
+  <text x="800" y="488" text-anchor="middle" font-family="'Courier New', monospace" font-weight="700" font-size="48" fill="#F2B705">SCREENSHOT COMING</text>
+</svg>
