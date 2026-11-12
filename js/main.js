@@ -234,6 +234,34 @@
   }
 
 
+  /* ---------- 5. Section highlight on the project page ---------- */
+
+  function initSideRoute() {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.side-route a'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+
+    function highlight(id) {
+      links.forEach(function (link) {
+        var match = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('is-current', match);
+        if (match) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) highlight(entry.target.id);
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    document.querySelectorAll('.detail-section').forEach(function (section) {
+      observer.observe(section);
+    });
+    highlight(links[0].getAttribute('href').slice(1));
+  }
+
+
   /* ---------- 6. Footer year ---------- */
 
   function initYear() {
@@ -249,6 +277,7 @@
     initCallouts();
     initRoute();
     initMenu();
+    initSideRoute();
     initYear();
   }
 

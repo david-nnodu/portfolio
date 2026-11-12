@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- PLACEHOLDER: project name in the title -->
+  <title>[Project One] | David Nnodu</title>
+  <meta name="description" content="Full details of [Project One]: the problem, features, screenshots, technologies and what David Nnodu learned building it.">
+  <meta name="theme-color" content="#F2B705">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('nepa'); } catch (e) {}
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'off' || (saved === null && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'night');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="danfo" viewBox="0 0 220 112">
+      <rect x="30" y="8" width="130" height="5" rx="2" style="fill:var(--bus-line)"/>
+      <rect x="44" y="12" width="4" height="9" style="fill:var(--bus-line)"/>
+      <rect x="142" y="12" width="4" height="9" style="fill:var(--bus-line)"/>
+      <path d="M8 34 Q8 20 22 20 L168 20 Q182 20 190 33 L208 64 Q212 71 212 79 L212 88 Q212 94 206 94 L14 94 Q8 94 8 88 Z" style="fill:var(--bus-body);stroke:var(--bus-line);stroke-width:3;stroke-linejoin:round"/>
+      <rect x="20" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="60" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="100" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="140" y="29" width="26" height="57" rx="2" style="fill:none;stroke:var(--bus-line);stroke-width:2.5"/>
+      <rect x="143" y="32" width="20" height="22" rx="1" style="fill:var(--bus-glass)"/>
+      <path d="M174 29 L184 29 Q188 29 190 33 L203 58 L174 58 Z" style="fill:var(--bus-glass)"/>
+      <rect x="9.5" y="64" width="201" height="8" style="fill:var(--bus-line)"/>
+      <g style="fill:var(--bus-body)">
+        <rect x="17" y="64" width="8" height="8"/><rect x="33" y="64" width="8" height="8"/><rect x="49" y="64" width="8" height="8"/>
+        <rect x="65" y="64" width="8" height="8"/><rect x="81" y="64" width="8" height="8"/><rect x="97" y="64" width="8" height="8"/>
+        <rect x="113" y="64" width="8" height="8"/><rect x="129" y="64" width="8" height="8"/><rect x="145" y="64" width="8" height="8"/>
+        <rect x="161" y="64" width="8" height="8"/><rect x="177" y="64" width="8" height="8"/><rect x="193" y="64" width="8" height="8"/>
+      </g>
+      <rect x="203" y="76" width="8" height="6" rx="1" style="fill:var(--bus-light)"/>
+      <text x="74" y="86" style="fill:var(--bus-line);font:700 9px 'Space Mono',monospace">LAG-419-DN</text>
+      <circle cx="50" cy="94" r="15" style="fill:var(--bus-line)"/>
+      <circle cx="50" cy="94" r="6" style="fill:var(--bus-hub)"/>
+      <circle cx="172" cy="94" r="15" style="fill:var(--bus-line)"/>
+      <circle cx="172" cy="94" r="6" style="fill:var(--bus-hub)"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="plate" href="index.html" aria-label="David Nnodu, back to home">LAG-419-DN</a>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects" aria-current="page">Projects</a></li>
+          <li><a class="nav-owa" href="index.html#contact">Owa!</a></li>
+        </ul>
+      </nav>
+      <button class="nepa-toggle" type="button" aria-pressed="false"
+        title="NEPA: what Nigerians still call the power company. Click to turn the light off (dark mode).">
+        <span class="nepa-bulb" aria-hidden="true"></span><span class="nepa-label">NEPA</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Stops</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Arrival ===== -->
+    <section class="detail-hero" aria-labelledby="detail-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li aria-current="page">[Project One]</li>
+          </ol>
+        </nav>
+        <p class="kicker">Stop 01 · You don reach</p>
+        <!-- PLACEHOLDER: project name -->
+        <h1 class="detail-title" id="detail-title">[Project One]</h1>
+        <p class="detail-summary">[One or two sentences that sum up the project: what it is and who it's for.]</p>
+        <ul class="detail-meta">
+          <li><span>Year</span> 2026</li>
+          <li><span>Role</span> Solo developer</li>
+          <li><span>Status</span> [Live / In progress]</li>
+        </ul>
+        <div class="hero-actions">
+          <!-- PLACEHOLDER: live site and repo links -->
+          <a class="btn" href="#" target="_blank" rel="noopener">Visit live site ↗</a>
+          <a class="btn btn--plain" href="https://github.com/david-nnodu" target="_blank" rel="noopener">View code on GitHub ↗</a>
+        </div>
+      </div>
+      <div class="stripe" aria-hidden="true"></div>
+    </section>
+
+    <div class="container">
+      <figure class="detail-shot">
+        <!-- PLACEHOLDER: main screenshot -->
+        <img src="assets/img/placeholder.svg" alt="Main screenshot of [Project One]" width="1600" height="1000">
+      </figure>
+
+      <div class="detail-layout">
+        <nav class="side-route" aria-label="On this page">
+          <p class="side-route-title">This journey</p>
+          <ol>
+            <li><a href="#overview"><span class="stop-dot"></span>Overview</a></li>
+            <li><a href="#problem"><span class="stop-dot"></span>The problem</a></li>
+            <li><a href="#features"><span class="stop-dot"></span>Features</a></li>
+            <li><a href="#screenshots"><span class="stop-dot"></span>Screenshots</a></li>
+            <li><a href="#technologies"><span class="stop-dot"></span>Technologies</a></li>
+            <li><a href="#learned"><span class="stop-dot"></span>What I learned</a></li>
+          </ol>
+        </nav>
+
+        <div class="detail-content">
+          <!-- PLACEHOLDER: everything below in [brackets] -->
+          <section class="detail-section" id="overview" aria-labelledby="overview-title">
+            <p class="kicker">The journey</p>
+            <h2 class="section-title" id="overview-title">Overview</h2>
+            <p>[Paragraph 1: What is this project? Describe it plainly, as if to someone who has never seen it.]</p>
+            <p>[Paragraph 2: Who uses it and how does it work from their side? Walk through a typical visit.]</p>
+            <p>[Paragraph 3 (optional): How long it took, whether it was for a class, a client or yourself.]</p>
+          </section>
+
+          <section class="detail-section" id="problem" aria-labelledby="problem-title">
+            <p class="kicker">Why this route exists</p>
+            <h2 class="section-title" id="problem-title">The problem</h2>
+            <p>[Who had the problem? What was going wrong for them before this existed?]</p>
+            <p>[Why did it matter, and how does your project solve it?]</p>
+          </section>
+
+          <section class="detail-section" id="features" aria-labelledby="features-title">
+            <p class="kicker">What's inside the bus</p>
+            <h2 class="section-title" id="features-title">Features</h2>
+            <ul class="feature-list">
+              <li><strong>[Feature name]</strong> [One sentence on what it does for the user.]</li>
+              <li><strong>[Feature name]</strong> [One sentence on what it does for the user.]</li>
+              <li><strong>[Feature name]</strong> [One sentence on what it does for the user.]</li>
+              <li><strong>[Feature name]</strong> [One sentence on what it does for the user.]</li>
+            </ul>
+          </section>
+
+          <section class="detail-section" id="screenshots" aria-labelledby="screenshots-title">
+            <p class="kicker">Window views</p>
+            <h2 class="section-title" id="screenshots-title">Screenshots</h2>
+            <div class="shots">
+              <figure>
+                <img src="assets/img/placeholder.svg" alt="[Describe screenshot 1]" width="1600" height="1000" loading="lazy">
+                <figcaption>[Caption: what this screen shows]</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/img/placeholder.svg" alt="[Describe screenshot 2]" width="1600" height="1000" loading="lazy">
+                <figcaption>[Caption: what this screen shows]</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/img/placeholder.svg" alt="[Describe screenshot 3]" width="1600" height="1000" loading="lazy">
+                <figcaption>[Caption: the mobile view, for example]</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="detail-section" id="technologies" aria-labelledby="technologies-title">
+            <p class="kicker">Under the bonnet</p>
+            <h2 class="section-title" id="technologies-title">Technologies used</h2>
+            <ul class="tech-list">
+              <li><span class="tag">[HTML]</span> [Why you used it, in one line.]</li>
+              <li><span class="tag">[CSS]</span> [Why you used it, in one line.]</li>
+              <li><span class="tag">[JavaScript]</span> [Why you used it, in one line.]</li>
+              <li><span class="tag">[Tool]</span> [Hosting, database or library, and why.]</li>
+            </ul>
+          </section>
+
+          <section class="detail-section" id="learned" aria-labelledby="learned-title">
+            <p class="kicker">What the road taught me</p>
+            <h2 class="section-title" id="learned-title">What I learned</h2>
+            <div class="lessons">
+              <article>
+                <h3>[Lesson one headline]</h3>
+                <p>[What happened, what you figured out, and what you'd do the same or differently.]</p>
+              </article>
+              <article>
+                <h3>[Lesson two headline]</h3>
+                <p>[A technical skill you picked up while building this.]</p>
+              </article>
+              <article>
+                <h3>[Lesson three headline]</h3>
+                <p>[Something about planning, design or working with users.]</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="end-line" aria-labelledby="end-title">
+      <div class="container end-inner">
+        <p class="kicker">Last stop</p>
+        <h2 class="section-title" id="end-title">End of the line</h2>
+        <div class="hero-actions">
+          <a class="btn btn--plain" href="index.html#projects">← Back to all stops</a>
+          <a class="btn btn--owa" href="index.html#contact">Owa! Work with me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="stripe" aria-hidden="true"></div>
+    <div class="container footer-inner">
+      <p>© <span class="js-year">2026</span> David Nnodu. Driven in Lagos.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/david-nnodu" target="_blank" rel="noopener">GitHub</a></li>
+        <!-- PLACEHOLDER: LinkedIn profile URL -->
+        <li><a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="index.html">Back to the park</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
