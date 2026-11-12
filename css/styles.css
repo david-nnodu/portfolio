@@ -1133,6 +1133,30 @@ body::before {
 }
 
 
+/* ---------- 13. 404 page ---------- */
+.lost {
+  background: var(--hero-bg);
+  color: var(--hero-text);
+}
+
+.lost-inner {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding-block: var(--space-6);
+}
+
+.lost-bus {
+  width: min(280px, 70%);
+  height: auto;
+  transform: rotate(-10deg);
+}
+
+.lost .kicker {
+  color: var(--hero-text);
+}
+
+
 /* ---------- 15. Reduced motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
   html {

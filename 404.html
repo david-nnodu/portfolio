@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Wrong bus | David Nnodu</title>
+  <meta name="description" content="This page doesn't exist. Head back to David Nnodu's portfolio.">
+  <meta name="theme-color" content="#F2B705">
+  <!-- Paths start with /portfolio/ so this page keeps its styles at any missing URL.
+       If your repo has a different name, change /portfolio/ to /your-repo-name/ below. -->
+  <link rel="icon" href="/portfolio/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/portfolio/css/styles.css">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('nepa'); } catch (e) {}
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'off' || (saved === null && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'night');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="danfo" viewBox="0 0 220 112">
+      <rect x="30" y="8" width="130" height="5" rx="2" style="fill:var(--bus-line)"/>
+      <rect x="44" y="12" width="4" height="9" style="fill:var(--bus-line)"/>
+      <rect x="142" y="12" width="4" height="9" style="fill:var(--bus-line)"/>
+      <path d="M8 34 Q8 20 22 20 L168 20 Q182 20 190 33 L208 64 Q212 71 212 79 L212 88 Q212 94 206 94 L14 94 Q8 94 8 88 Z" style="fill:var(--bus-body);stroke:var(--bus-line);stroke-width:3;stroke-linejoin:round"/>
+      <rect x="20" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="60" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="100" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="140" y="29" width="26" height="57" rx="2" style="fill:none;stroke:var(--bus-line);stroke-width:2.5"/>
+      <rect x="143" y="32" width="20" height="22" rx="1" style="fill:var(--bus-glass)"/>
+      <path d="M174 29 L184 29 Q188 29 190 33 L203 58 L174 58 Z" style="fill:var(--bus-glass)"/>
+      <rect x="9.5" y="64" width="201" height="8" style="fill:var(--bus-line)"/>
+      <g style="fill:var(--bus-body)">
+        <rect x="17" y="64" width="8" height="8"/><rect x="33" y="64" width="8" height="8"/><rect x="49" y="64" width="8" height="8"/>
+        <rect x="65" y="64" width="8" height="8"/><rect x="81" y="64" width="8" height="8"/><rect x="97" y="64" width="8" height="8"/>
+        <rect x="113" y="64" width="8" height="8"/><rect x="129" y="64" width="8" height="8"/><rect x="145" y="64" width="8" height="8"/>
+        <rect x="161" y="64" width="8" height="8"/><rect x="177" y="64" width="8" height="8"/><rect x="193" y="64" width="8" height="8"/>
+      </g>
+      <rect x="203" y="76" width="8" height="6" rx="1" style="fill:var(--bus-light)"/>
+      <text x="74" y="86" style="fill:var(--bus-line);font:700 9px 'Space Mono',monospace">LAG-419-DN</text>
+      <circle cx="50" cy="94" r="15" style="fill:var(--bus-line)"/>
+      <circle cx="50" cy="94" r="6" style="fill:var(--bus-hub)"/>
+      <circle cx="172" cy="94" r="15" style="fill:var(--bus-line)"/>
+      <circle cx="172" cy="94" r="6" style="fill:var(--bus-hub)"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="plate" href="/portfolio/" aria-label="David Nnodu, back to home">LAG-419-DN</a>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/portfolio/#about">About</a></li>
+          <li><a href="/portfolio/#projects">Projects</a></li>
+          <li><a class="nav-owa" href="/portfolio/#contact">Owa!</a></li>
+        </ul>
+      </nav>
+      <button class="nepa-toggle" type="button" aria-pressed="false"
+        title="NEPA: what Nigerians still call the power company. Click to turn the light off (dark mode).">
+        <span class="nepa-bulb" aria-hidden="true"></span><span class="nepa-label">NEPA</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Stops</button>
+    </div>
+  </header>
+
+  <main id="main" class="lost">
+    <div class="container lost-inner">
+      <svg class="danfo lost-bus" viewBox="0 0 220 112" aria-hidden="true"><use href="#danfo"/></svg>
+      <p class="kicker">Error 404</p>
+      <h1 class="hero-title">Wrong bus.</h1>
+      <p class="hero-sub">This route no dey. The page you're looking for doesn't exist or has moved.</p>
+      <div class="hero-actions">
+        <a class="btn" href="/portfolio/">Take me back to the park</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="stripe" aria-hidden="true"></div>
+    <div class="container footer-inner">
+      <p>© <span class="js-year">2026</span> David Nnodu. Driven in Lagos.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="/portfolio/js/main.js"></script>
+</body>
+</html>
