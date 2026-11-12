@@ -1,0 +1,345 @@
+/* =============================================================
+   Danfo portfolio: David Nnodu
+   -------------------------------------------------------------
+   1.  Variables (day theme)
+   2.  Night theme (NEPA off)
+   3.  Reset and base
+   4.  Layout helpers
+   5.  Components (buttons, stripe, tags, stickers, stop dots)
+   6.  Header
+   7.  Hero
+   8.  About
+   9.  Projects route
+   10. Contact
+   11. Footer and toast
+   12. Project details page
+   13. 404 page
+   14. Media queries (tablet, desktop)
+   15. Reduced motion
+   ============================================================= */
+
+
+/* ---------- 1. Variables (day theme) ---------- */
+/* Layout idea: one bus route down the page. Yellow stops, dark road, red for "Owa!" only. */
+:root {
+  /* Colours */
+  --yellow: #F2B705;      /* danfo body */
+  --ink: #141414;         /* asphalt black */
+  --cream: #F5F0E1;       /* receipt paper */
+  --owa: #D7263D;         /* contact only */
+  --owa-text: #FFFFFF;
+
+  --bg: #F5F0E1;          /* page background */
+  --text: #141414;
+  --muted: #5F5A4C;
+  --card: #FFFDF6;
+  --line: #141414;        /* borders */
+  --shadow: #141414;      /* hard offset shadows */
+  --hero-bg: #F2B705;
+  --hero-text: #141414;
+  --road: #141414;
+  --road-text: #F5F0E1;
+  --road-muted: #B9B3A2;
+  --btn-bg: #141414;
+  --btn-text: #F2B705;
+  --stripe-a: #141414;
+  --stripe-b: #F2B705;
+  --focus: #141414;
+
+  /* The bus drawing */
+  --bus-body: #F2B705;
+  --bus-line: #141414;
+  --bus-glass: #2E2E2C;
+  --bus-light: #FFF4C2;
+  --bus-hub: #B9B3A2;
+
+  /* Type */
+  --font-display: "Bungee", "Arial Black", Impact, sans-serif;
+  --font-body: "Space Mono", "Courier New", monospace;
+
+  /* Spacing and shape */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 5rem;
+  --radius: 4px;
+  --max: 1200px;
+  --header-h: 64px;
+
+  color-scheme: light;
+}
+
+
+/* ---------- 3. Reset and base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+
+/* ---------- 4. Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.section {
+  padding-block: var(--space-6);
+}
+
+.section-head {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: var(--space-4);
+  max-width: 44rem;
+}
+
+.kicker {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+.section-intro {
+  max-width: 36rem;
+}
+
+.mini-title {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+
+/* ---------- 5. Components ---------- */
+
+/* Buttons: printed look, they "press in" on hover */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.7rem 1.2rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 4px 4px 0 var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--shadow);
+}
+
+.btn--owa {
+  color: var(--owa-text);
+  background: var(--owa);
+}
+
+.btn--plain {
+  color: var(--text);
+  background: var(--card);
+}
+
+.btn--small {
+  min-height: 44px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.btn--big {
+  min-height: 60px;
+  padding: 1rem 1.6rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  letter-spacing: 0.02em;
+}
+
+/* The black-and-yellow band along a danfo's side */
+.stripe {
+  height: 14px;
+  background: repeating-linear-gradient(90deg, var(--stripe-a) 0 28px, var(--stripe-b) 28px 56px);
+  border-block: 2px solid var(--stripe-a);
+}
+
+/* Tech and skill tags, like torn ticket stubs */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border: 1.5px dashed currentColor;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Stickers on the back of the bus */
+.sticker {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--card);
+  border: 2px solid var(--line);
+  box-shadow: 3px 3px 0 var(--shadow);
+  transform: rotate(var(--tilt, -2deg));
+}
+
+.sticker--yellow {
+  color: var(--ink);
+  background: var(--yellow);
+}
+
+.tilt-left { --tilt: -3deg; }
+.tilt-right { --tilt: 2deg; }
+
+/* Stop markers on the route */
+.stop-dot {
+  display: block;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--road);
+  border: 3px solid var(--yellow);
+}
+
+.is-current > .stop-dot,
+.is-current > a > .stop-dot {
+  background: var(--yellow);
+}
+
+.stop--owa .stop-dot {
+  background: var(--owa);
+  border-color: var(--owa);
+}
+
+
+/* ---------- 15. Reduced motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
