@@ -1157,6 +1157,241 @@ body::before {
 }
 
 
+/* ---------- 14. Media queries ---------- */
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  :root {
+    --header-h: 72px;
+  }
+
+  .container {
+    padding-left: max(2rem, env(safe-area-inset-left, 0px));
+    padding-right: max(2rem, env(safe-area-inset-right, 0px));
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav,
+  .site-nav.is-open {
+    display: block;
+    position: static;
+    margin: 0;
+    background: none;
+    border: 0;
+  }
+
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .site-nav a {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .nav-owa {
+    border-radius: var(--radius);
+  }
+
+  .header-inner {
+    gap: 1rem;
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  }
+
+  /* Tickets turn sideways: picture left, text right */
+  .ticket {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .ticket-img {
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 240px;
+    border-bottom: 0;
+    border-right: 2px dashed var(--line);
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .shots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-hero .container {
+    padding-block: var(--space-5) var(--space-6);
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    align-items: end;
+    padding-block: var(--space-6) var(--space-4);
+  }
+
+  /* Horizontal route bar above the three tickets */
+  .route-bar {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding-top: 52px;
+    margin-bottom: var(--space-5);
+  }
+
+  .route-bar::before {
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: calc(52px + 7.5px);
+    border-top: 3px dashed var(--yellow);
+  }
+
+  .route-bar a {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 0.35rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .route-bar .stop-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .route-bar .stop-note {
+    font-size: 0.75rem;
+    color: var(--road-muted);
+  }
+
+  .route-bar a:hover .stop-name {
+    text-decoration: underline;
+  }
+
+  .project-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+    padding-left: 0;
+  }
+
+  .project-list::before,
+  .card-stop {
+    display: none;
+  }
+
+  .ticket {
+    display: flex;
+  }
+
+  .ticket-img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    border-right: 0;
+    border-bottom: 2px dashed var(--line);
+  }
+
+  .ticket.is-current {
+    transform: translateY(-6px);
+  }
+
+  .route-bus {
+    --bus-w: 72px;
+    transform: translate(calc(var(--bus-x, 0px) - 50%), calc(var(--bus-y, 0px) - 100% - 4px));
+  }
+
+  /* Details page: sticky route on the left */
+  .detail-layout {
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    gap: var(--space-5);
+    padding-top: var(--space-5);
+  }
+
+  .side-route {
+    top: calc(env(safe-area-inset-top, 0px) + var(--header-h) + 24px);
+    align-self: start;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+  }
+
+  .side-route-title {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .side-route ol {
+    position: relative;
+    display: grid;
+    gap: 0.2rem;
+    overflow: visible;
+  }
+
+  .side-route ol::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 5px;
+    border-left: 3px dashed var(--yellow);
+  }
+
+  .side-route a {
+    position: relative;
+    padding: 0.3rem 0;
+    border: 0;
+    white-space: normal;
+  }
+
+  .side-route .stop-dot {
+    background: var(--bg);
+    border-color: var(--line);
+  }
+
+  .side-route a.is-current {
+    color: inherit;
+    background: none;
+  }
+
+  .side-route a.is-current .stop-dot {
+    background: var(--yellow);
+    border-color: var(--line);
+  }
+
+  .shots {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
 /* ---------- 15. Reduced motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
   html {
