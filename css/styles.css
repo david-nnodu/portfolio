@@ -573,6 +573,105 @@ body::before {
 }
 
 
+/* ---------- 8. About ---------- */
+.about-grid {
+  display: grid;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.permit {
+  max-width: 360px;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+.permit-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: var(--yellow);
+  border-bottom: 2px solid var(--line);
+}
+
+.permit-head span {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.permit-body {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-2);
+}
+
+.permit-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid var(--line);
+}
+
+.permit-fields {
+  display: grid;
+  margin: 0;
+}
+
+.permit-fields div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.35rem;
+  border-bottom: 1.5px dashed var(--line);
+  font-size: 0.85rem;
+}
+
+.permit-fields div:last-child {
+  border-bottom: 0;
+}
+
+.permit-fields dt {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.permit-fields dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.about-text {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 40rem;
+  min-width: 0;
+}
+
+.about-text .lead {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.about-text .mini-title {
+  margin-top: var(--space-2);
+}
+
+.about-text .sticker {
+  justify-self: start;
+  margin-top: var(--space-3);
+}
+
+
 /* ---------- 11. Footer and toast ---------- */
 .site-footer {
   --focus: var(--yellow);
