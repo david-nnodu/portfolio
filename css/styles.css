@@ -484,6 +484,95 @@ body::before {
 }
 
 
+/* ---------- 7. Hero ---------- */
+.hero {
+  background: var(--hero-bg);
+  color: var(--hero-text);
+}
+
+.hero-inner {
+  display: grid;
+  gap: var(--space-4);
+  padding-block: var(--space-5) var(--space-4);
+}
+
+.hero-text {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.callout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  min-height: 3.2em;
+}
+
+.callout-label {
+  padding: 0.1rem 0.45rem;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--btn-text);
+  background: var(--btn-bg);
+}
+
+.callout-text {
+  font-style: italic;
+  transition: opacity 0.25s ease;
+}
+
+.callout-text.is-changing {
+  opacity: 0;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 9vw, 5.5rem);
+  line-height: 0.98;
+}
+
+.hero-sub {
+  max-width: 34rem;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.hero-bus {
+  align-self: end;
+  max-width: 420px;
+  width: 100%;
+  justify-self: center;
+}
+
+.hero-bus .danfo {
+  width: 100%;
+  height: auto;
+  animation: idle 1.6s ease-in-out infinite;
+}
+
+.road-shadow {
+  height: 10px;
+  margin: -4px 8% 0;
+  border-radius: 50%;
+  background: var(--hero-text);
+  opacity: 0.18;
+}
+
+@keyframes idle {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-2px); }
+}
+
+
 /* ---------- 11. Footer and toast ---------- */
 .site-footer {
   --focus: var(--yellow);

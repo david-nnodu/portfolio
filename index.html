@@ -24,6 +24,35 @@
   </script>
 </head>
 <body>
+  <!-- Danfo drawing, defined once and reused with <use href="#danfo"> -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="danfo" viewBox="0 0 220 112">
+      <rect x="30" y="8" width="130" height="5" rx="2" style="fill:var(--bus-line)"/>
+      <rect x="44" y="12" width="4" height="9" style="fill:var(--bus-line)"/>
+      <rect x="142" y="12" width="4" height="9" style="fill:var(--bus-line)"/>
+      <path d="M8 34 Q8 20 22 20 L168 20 Q182 20 190 33 L208 64 Q212 71 212 79 L212 88 Q212 94 206 94 L14 94 Q8 94 8 88 Z" style="fill:var(--bus-body);stroke:var(--bus-line);stroke-width:3;stroke-linejoin:round"/>
+      <rect x="20" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="60" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="100" y="29" width="34" height="26" rx="2" style="fill:var(--bus-glass)"/>
+      <rect x="140" y="29" width="26" height="57" rx="2" style="fill:none;stroke:var(--bus-line);stroke-width:2.5"/>
+      <rect x="143" y="32" width="20" height="22" rx="1" style="fill:var(--bus-glass)"/>
+      <path d="M174 29 L184 29 Q188 29 190 33 L203 58 L174 58 Z" style="fill:var(--bus-glass)"/>
+      <rect x="9.5" y="64" width="201" height="8" style="fill:var(--bus-line)"/>
+      <g style="fill:var(--bus-body)">
+        <rect x="17" y="64" width="8" height="8"/><rect x="33" y="64" width="8" height="8"/><rect x="49" y="64" width="8" height="8"/>
+        <rect x="65" y="64" width="8" height="8"/><rect x="81" y="64" width="8" height="8"/><rect x="97" y="64" width="8" height="8"/>
+        <rect x="113" y="64" width="8" height="8"/><rect x="129" y="64" width="8" height="8"/><rect x="145" y="64" width="8" height="8"/>
+        <rect x="161" y="64" width="8" height="8"/><rect x="177" y="64" width="8" height="8"/><rect x="193" y="64" width="8" height="8"/>
+      </g>
+      <rect x="203" y="76" width="8" height="6" rx="1" style="fill:var(--bus-light)"/>
+      <text x="74" y="86" style="fill:var(--bus-line);font:700 9px 'Space Mono',monospace">LAG-419-DN</text>
+      <circle cx="50" cy="94" r="15" style="fill:var(--bus-line)"/>
+      <circle cx="50" cy="94" r="6" style="fill:var(--bus-hub)"/>
+      <circle cx="172" cy="94" r="15" style="fill:var(--bus-line)"/>
+      <circle cx="172" cy="94" r="6" style="fill:var(--bus-hub)"/>
+    </symbol>
+  </svg>
+
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -45,6 +74,30 @@
   </header>
 
   <main id="main">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="callout">
+            <span class="callout-label">Conductor</span>
+            <span class="callout-text" id="callout-text">Yaba! Lekki! Production! Enter with your change o.</span>
+          </p>
+          <h1 class="hero-title" id="hero-title">I build things that move.</h1>
+          <!-- PLACEHOLDER: adjust this role line if you like -->
+          <p class="hero-sub">David Nnodu. Computer Science student at Pan-Atlantic University. Frontend developer, one stop at a time.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">Board the bus</a>
+            <a class="btn btn--owa" href="#contact">Owa! Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-bus" aria-hidden="true">
+          <svg class="danfo" viewBox="0 0 220 112"><use href="#danfo"/></svg>
+          <div class="road-shadow"></div>
+        </div>
+      </div>
+      <div class="stripe" aria-hidden="true"></div>
+    </section>
 
   </main>
 

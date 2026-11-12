@@ -96,6 +96,30 @@
   }
 
 
+  /* ---------- 2. Conductor call-outs ---------- */
+
+  function initCallouts() {
+    var text = document.getElementById('callout-text');
+    if (!text || reduceMotion.matches) return;
+
+    var lines = [
+      'Yaba! Lekki! Production! Enter with your change o.',
+      'One chance remain! Enter, e dey go!',
+      'Straight to deploy, no stopping!'
+    ];
+    var index = 0;
+
+    setInterval(function () {
+      text.classList.add('is-changing');
+      setTimeout(function () {
+        index = (index + 1) % lines.length;
+        text.textContent = lines[index];
+        text.classList.remove('is-changing');
+      }, 250);
+    }, 3500);
+  }
+
+
   /* ---------- 4. Mobile menu ---------- */
 
   function initMenu() {
@@ -138,6 +162,7 @@
 
   function init() {
     initNepa();
+    initCallouts();
     initMenu();
     initYear();
   }
