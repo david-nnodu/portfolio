@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <!-- PLACEHOLDER: project name in the title -->
-  <title>[Project One] | David Nnodu</title>
-  <meta name="description" content="Full details of [Project One]: the problem, features, screenshots, technologies and what David Nnodu learned building it.">
+  <title>Sante LIMS | David Nnodu</title>
+  <meta name="description" content="Sante LIMS, a JavaFX lab management system by David Nnodu: the problem, features, screenshots, technologies and what he learned.">
   <meta name="theme-color" content="#F2B705">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,22 +79,19 @@
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#projects">Projects</a></li>
-            <li aria-current="page">[Project One]</li>
+            <li aria-current="page">Sante LIMS</li>
           </ol>
         </nav>
         <p class="kicker">Stop 01 · You don reach</p>
-        <!-- PLACEHOLDER: project name -->
-        <h1 class="detail-title" id="detail-title">[Project One]</h1>
-        <p class="detail-summary">[One or two sentences that sum up the project: what it is and who it's for.]</p>
+        <h1 class="detail-title" id="detail-title">Sante LIMS</h1>
+        <p class="detail-summary">A Laboratory Information Management System that moves Sante Diagnostics from paper records to one desktop app, used by lab admins, lab attendants and patients.</p>
         <ul class="detail-meta">
           <li><span>Year</span> 2026</li>
-          <li><span>Role</span> Solo developer</li>
-          <li><span>Status</span> [Live / In progress]</li>
+          <li><span>Course</span> CSC 310, PAU</li>
+          <li><span>Type</span> JavaFX desktop app</li>
         </ul>
         <div class="hero-actions">
-          <!-- PLACEHOLDER: live site and repo links -->
-          <a class="btn" href="#" target="_blank" rel="noopener">Visit live site ↗</a>
-          <a class="btn btn--plain" href="https://github.com/david-nnodu" target="_blank" rel="noopener">View code on GitHub ↗</a>
+          <a class="btn" href="https://github.com/david-nnodu/SanteLIMS" target="_blank" rel="noopener">View code on GitHub ↗</a>
         </div>
       </div>
       <div class="stripe" aria-hidden="true"></div>
@@ -103,8 +99,8 @@
 
     <div class="container">
       <figure class="detail-shot">
-        <!-- PLACEHOLDER: main screenshot -->
-        <img src="assets/img/placeholder.svg" alt="Main screenshot of [Project One]" width="1600" height="1000">
+        <!-- PLACEHOLDER: main screenshot, e.g. assets/img/sante-dashboard.png -->
+        <img src="assets/img/placeholder.svg" alt="Sante LIMS customer dashboard showing test results and a countdown to when each result is ready" width="1600" height="1000">
       </figure>
 
       <div class="detail-layout">
@@ -121,48 +117,53 @@
         </nav>
 
         <div class="detail-content">
-          <!-- PLACEHOLDER: everything below in [brackets] -->
           <section class="detail-section" id="overview" aria-labelledby="overview-title">
             <p class="kicker">The journey</p>
             <h2 class="section-title" id="overview-title">Overview</h2>
-            <p>[Paragraph 1: What is this project? Describe it plainly, as if to someone who has never seen it.]</p>
-            <p>[Paragraph 2: Who uses it and how does it work from their side? Walk through a typical visit.]</p>
-            <p>[Paragraph 3 (optional): How long it took, whether it was for a class, a client or yourself.]</p>
+            <p>Sante LIMS is a desktop app for Sante Diagnostics, a medical laboratory. It handles a lab's whole day: patients order tests, staff collect and process samples, results are uploaded and checked, and patients get an email when their results are ready.</p>
+            <p>Everyone logs in to the same app, but each person sees a different dashboard depending on their role. A Super Admin sets up the tests the lab offers and oversees everything. A Lab Attendant runs daily operations. A Customer orders tests and views their own results.</p>
+            <p>I built it as my examination project for CSC 310 at Pan-Atlantic University, working from a brief that set out the functional and technical requirements.</p>
           </section>
 
           <section class="detail-section" id="problem" aria-labelledby="problem-title">
             <p class="kicker">Why this route exists</p>
             <h2 class="section-title" id="problem-title">The problem</h2>
-            <p>[Who had the problem? What was going wrong for them before this existed?]</p>
-            <p>[Why did it matter, and how does your project solve it?]</p>
+            <p>Sante Diagnostics ran test requests, sample tracking and result delivery on paper. Results took longer than they should, records could get lost, and patients had no way to see where their test was without calling or visiting the lab.</p>
+            <p>The system needed to stand on three pillars: administrative governance (control over who can do what, and a record of every action), operational precision (every sample tracked from collection to validation), and customer transparency (patients see their requests, payment status and results for themselves).</p>
           </section>
 
           <section class="detail-section" id="features" aria-labelledby="features-title">
             <p class="kicker">What's inside the bus</p>
             <h2 class="section-title" id="features-title">Features</h2>
             <ul class="feature-list">
-              <li><strong>[Feature name]</strong> [One sentence on what it does for the user.]</li>
-              <li><strong>[Feature name]</strong> [One sentence on what it does for the user.]</li>
-              <li><strong>[Feature name]</strong> [One sentence on what it does for the user.]</li>
-              <li><strong>[Feature name]</strong> [One sentence on what it does for the user.]</li>
+              <li><strong>Three roles, three dashboards</strong> Super Admin, Lab Attendant and Customer each get their own screens and permissions after logging in.</li>
+              <li><strong>Secure sign-up and login</strong> Passwords are hashed with BCrypt. Customers who register themselves confirm their email with a 6-digit code.</li>
+              <li><strong>Forced password change</strong> Accounts created by staff start with a temporary password that must be changed on first login.</li>
+              <li><strong>Custom test builder</strong> The admin defines each test's type, price, turnaround time and result format (numeric, text, PDF or image).</li>
+              <li><strong>Request queue with payments</strong> Customers see the lab's bank details when they order. Staff check the transfer and mark the request Paid.</li>
+              <li><strong>Sample tracking</strong> Attendants move each sample through Collected, Processing and Validated.</li>
+              <li><strong>Result upload and verification</strong> PDF reports and images are attached to a request, and customers only see them after a staff member verifies them.</li>
+              <li><strong>Live countdown and email alerts</strong> The customer dashboard counts down to each result's ready time, and the customer gets an email the moment a result is validated.</li>
+              <li><strong>Audit trail</strong> Every key action, such as a sample status change, is written to a log that can only be added to, never edited or deleted.</li>
             </ul>
           </section>
 
           <section class="detail-section" id="screenshots" aria-labelledby="screenshots-title">
             <p class="kicker">Window views</p>
             <h2 class="section-title" id="screenshots-title">Screenshots</h2>
+            <!-- PLACEHOLDER: replace each placeholder.svg with a real screenshot from the app -->
             <div class="shots">
               <figure>
-                <img src="assets/img/placeholder.svg" alt="[Describe screenshot 1]" width="1600" height="1000" loading="lazy">
-                <figcaption>[Caption: what this screen shows]</figcaption>
+                <img src="assets/img/placeholder.svg" alt="Login screen of Sante LIMS" width="1600" height="1000" loading="lazy">
+                <figcaption>Login, shared by all three roles</figcaption>
               </figure>
               <figure>
-                <img src="assets/img/placeholder.svg" alt="[Describe screenshot 2]" width="1600" height="1000" loading="lazy">
-                <figcaption>[Caption: what this screen shows]</figcaption>
+                <img src="assets/img/placeholder.svg" alt="Lab Attendant's sample tracker in Sante LIMS" width="1600" height="1000" loading="lazy">
+                <figcaption>Lab Attendant: sample lifecycle tracker</figcaption>
               </figure>
               <figure>
-                <img src="assets/img/placeholder.svg" alt="[Describe screenshot 3]" width="1600" height="1000" loading="lazy">
-                <figcaption>[Caption: the mobile view, for example]</figcaption>
+                <img src="assets/img/placeholder.svg" alt="Super Admin's audit trail in Sante LIMS" width="1600" height="1000" loading="lazy">
+                <figcaption>Super Admin: audit trail</figcaption>
               </figure>
             </div>
           </section>
@@ -171,28 +172,35 @@
             <p class="kicker">Under the bonnet</p>
             <h2 class="section-title" id="technologies-title">Technologies used</h2>
             <ul class="tech-list">
-              <li><span class="tag">[HTML]</span> [Why you used it, in one line.]</li>
-              <li><span class="tag">[CSS]</span> [Why you used it, in one line.]</li>
-              <li><span class="tag">[JavaScript]</span> [Why you used it, in one line.]</li>
-              <li><span class="tag">[Tool]</span> [Hosting, database or library, and why.]</li>
+              <li><span class="tag">Java 17</span> The core language, organised into controllers, DAO classes for database access, and services.</li>
+              <li><span class="tag">JavaFX + FXML</span> The interface, with each screen and dashboard panel laid out in its own FXML file.</li>
+              <li><span class="tag">PostgreSQL</span> Stores users, tests, requests, samples, results, email codes and the audit log.</li>
+              <li><span class="tag">jBCrypt</span> Hashes passwords so they're never stored as plain text.</li>
+              <li><span class="tag">Jakarta Mail</span> Sends verification codes and "result ready" emails over SMTP, on a background thread so the app never freezes.</li>
+              <li><span class="tag">Ant</span> The build tool, through NetBeans.</li>
             </ul>
           </section>
 
           <section class="detail-section" id="learned" aria-labelledby="learned-title">
             <p class="kicker">What the road taught me</p>
             <h2 class="section-title" id="learned-title">What I learned</h2>
+            <!-- PLACEHOLDER: these are drafts based on the code. Rewrite them in your own words. -->
             <div class="lessons">
               <article>
-                <h3>[Lesson one headline]</h3>
-                <p>[What happened, what you figured out, and what you'd do the same or differently.]</p>
+                <h3>Roles shape the whole design</h3>
+                <p>Deciding early what each role can see and do made everything else easier. Separate dashboards and panels per role kept the screens simple and stopped customers from reaching staff tools.</p>
               </article>
               <article>
-                <h3>[Lesson two headline]</h3>
-                <p>[A technical skill you picked up while building this.]</p>
+                <h3>Keep slow work off the UI thread</h3>
+                <p>Sending an email takes a few seconds. Running it on a background thread meant the app stayed responsive while the message went out.</p>
               </article>
               <article>
-                <h3>[Lesson three headline]</h3>
-                <p>[Something about planning, design or working with users.]</p>
+                <h3>Security is in the small decisions</h3>
+                <p>Hashing passwords with BCrypt, forcing a password change for staff-created accounts, and making the audit log add-only taught me to think about trust and accountability, not just features.</p>
+              </article>
+              <article>
+                <h3>Never hard-code secrets</h3>
+                <p>Database and email passwords live in a config file that stays off GitHub, with an example file showing what to fill in.</p>
               </article>
             </div>
           </section>
